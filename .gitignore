@@ -86,3 +86,4 @@ reports/**/*.pdf
 .pytest_cache/
 .coverage
 htmlcov/
+catboost_info/

@@ -1,0 +1,88 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Virtual Environments
+.venv/
+venv/
+ENV/
+env/
+
+# IDE & Editors
+.idea/
+.vscode/
+*.swp
+*.swo
+.project
+.pydevproject
+.settings/
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Environment variables & secrets
+.env
+.env.*
+!.env.example
+kaggle.json
+
+# Competition datasets (raw, interim, processed data)
+data/raw/*
+!data/raw/.gitkeep
+data/interim/*
+!data/interim/.gitkeep
+data/processed/*
+!data/processed/.gitkeep
+
+# Model weights and artifacts
+models/**/*.pkl
+models/**/*.joblib
+models/**/*.bin
+models/**/*.pt
+models/**/*.onnx
+models/**/*.model
+!models/**/.gitkeep
+
+# Generated submissions
+submissions/**/*.csv
+!submissions/**/.gitkeep
+
+# Reports / artifacts (keep directory structure)
+reports/**/*.html
+reports/**/*.pdf
+!reports/**/.gitkeep
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+*-checkpoint.ipynb
+
+# Testing & coverage
+.pytest_cache/
+.coverage
+htmlcov/

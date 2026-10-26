@@ -1,0 +1,34 @@
+competition:
+  id: "house-prices-advanced-regression-techniques"
+  target_column: "SalePrice"
+  id_column: "Id"
+  random_seed: 42
+  evaluation_metric: "RMSLE"
+
+paths:
+  raw_data_dir: "data/raw"
+  interim_data_dir: "data/interim"
+  processed_data_dir: "data/processed"
+  models_dir: "models"
+  reports_dir: "reports"
+  submissions_dir: "submissions"
+
+models:
+  active_model: "model_1_grandmaster"
+  model_1_grandmaster:
+    status: "in_development"
+    stack:
+      base_models:
+        - "XGBoost Regressor"
+        - "LightGBM Regressor"
+        - "CatBoost Regressor"
+        - "ElasticNetCV"
+      meta_model: "RidgeCV"
+  model_2_legacy:
+    status: "not_started"
+    stack:
+      base_models:
+        - "LassoCV"
+        - "RidgeCV"
+        - "HuberRegressor"
+      meta_model: "LassoCV"

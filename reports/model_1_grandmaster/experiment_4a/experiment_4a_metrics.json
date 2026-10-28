@@ -1,0 +1,157 @@
+{
+  "metadata": {
+    "experiment": "Experiment 4A: Leakage-Safe Constrained Tree Blending",
+    "timestamp": "2026-10-27T00:43:52.190385",
+    "target_metric": "RMSLE",
+    "validation_population": 1460,
+    "random_seed": 42
+  },
+  "standalone_models": {
+    "xgboost": {
+      "rmsle": 0.1260341277705179,
+      "rmse": 28479.074959365225,
+      "mae": 14705.151877363403
+    },
+    "lightgbm": {
+      "rmsle": 0.1306028679989426,
+      "rmse": 28509.100703137265,
+      "mae": 15431.779841469652
+    },
+    "catboost": {
+      "rmsle": 0.12772656530813423,
+      "rmse": 29487.073045232843,
+      "mae": 15281.433876234165
+    }
+  },
+  "equal_weight_baseline": {
+    "rmsle": 0.1254615140327748,
+    "rmse": 28271.267536236795,
+    "mae": 14701.93511657022
+  },
+  "held_out_constrained_blend": {
+    "rmsle": 0.1254246794201921,
+    "rmse": 28576.65175147778,
+    "mae": 14696.609239513657
+  },
+  "delta_vs_equal_weight": {
+    "delta_rmsle": -3.683461258272014e-05,
+    "delta_rmse": 305.3842152409852,
+    "delta_mae": -5.325877056562604
+  },
+  "fold_results": [
+    {
+      "fold": 1,
+      "weights": {
+        "xgboost": 0.52834,
+        "lightgbm": 0.13476,
+        "catboost": 0.3369
+      },
+      "optimization_success": true,
+      "optimization_message": "Optimization terminated successfully",
+      "opt_metrics": {
+        "rmsle": 0.12802816291953933,
+        "rmse": 26783.047658208212,
+        "mae": 15033.555839487855
+      },
+      "equal_metrics": {
+        "rmsle": 0.12902225516310287,
+        "rmse": 27379.774845982192,
+        "mae": 15150.168561095094
+      },
+      "delta_rmsle": -0.0009940922435635324
+    },
+    {
+      "fold": 2,
+      "weights": {
+        "xgboost": 0.67529,
+        "lightgbm": 0.0,
+        "catboost": 0.32471
+      },
+      "optimization_success": true,
+      "optimization_message": "Optimization terminated successfully",
+      "opt_metrics": {
+        "rmsle": 0.11092543536097166,
+        "rmse": 27347.80387975005,
+        "mae": 13959.7206440931
+      },
+      "equal_metrics": {
+        "rmsle": 0.10873485475913941,
+        "rmse": 25903.53070923069,
+        "mae": 13785.399778441397
+      },
+      "delta_rmsle": 0.0021905806018322482
+    },
+    {
+      "fold": 3,
+      "weights": {
+        "xgboost": 0.62337,
+        "lightgbm": 0.04972,
+        "catboost": 0.32691
+      },
+      "optimization_success": true,
+      "optimization_message": "Optimization terminated successfully",
+      "opt_metrics": {
+        "rmsle": 0.15463668659612287,
+        "rmse": 39659.01635445872,
+        "mae": 16931.635756097297
+      },
+      "equal_metrics": {
+        "rmsle": 0.15474033865666353,
+        "rmse": 39240.7976305343,
+        "mae": 17080.383089498315
+      },
+      "delta_rmsle": -0.00010365206054066545
+    },
+    {
+      "fold": 4,
+      "weights": {
+        "xgboost": 0.45557,
+        "lightgbm": 0.08852,
+        "catboost": 0.45591
+      },
+      "optimization_success": true,
+      "optimization_message": "Optimization terminated successfully",
+      "opt_metrics": {
+        "rmsle": 0.12044236129785717,
+        "rmse": 25255.558252534272,
+        "mae": 14768.987693905952
+      },
+      "equal_metrics": {
+        "rmsle": 0.12060737411661958,
+        "rmse": 25141.39496889478,
+        "mae": 14697.294464977038
+      },
+      "delta_rmsle": -0.00016501281876241114
+    },
+    {
+      "fold": 5,
+      "weights": {
+        "xgboost": 0.45758,
+        "lightgbm": 0.12771,
+        "catboost": 0.4147
+      },
+      "optimization_success": true,
+      "optimization_message": "Optimization terminated successfully",
+      "opt_metrics": {
+        "rmsle": 0.10743472944669931,
+        "rmse": 20179.452590907662,
+        "mae": 12789.146263984087
+      },
+      "equal_metrics": {
+        "rmsle": 0.10836159583187965,
+        "rmse": 20093.479714676883,
+        "mae": 12796.42968883925
+      },
+      "delta_rmsle": -0.0009268663851803444
+    }
+  ],
+  "full_dataset_weights": {
+    "xgboost": 0.56538,
+    "lightgbm": 0.06179,
+    "catboost": 0.37283
+  },
+  "recommendation": {
+    "keep_blend": false,
+    "rationale": "The leakage-safe held-out blend achieved only a negligible -0.00004 RMSLE improvement (0.12546 -> 0.12542) while worsening RMSE by +$305.38 due to Fold 2 weight boundary saturation (LightGBM set to 0.0000 causing +0.00219 fold RMSLE regression). Equal weighting provides superior regularization and stability."
+  }
+}

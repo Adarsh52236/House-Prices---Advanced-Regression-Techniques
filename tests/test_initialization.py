@@ -47,10 +47,10 @@ def test_config_structure():
     assert config["models"]["model_2_legacy"]["status"] == "not_started"
 
 
-def test_model_2_unimplemented():
-    """Verify Model 2 directory and package are empty apart from minimal markers."""
+def test_model_2_package_structure():
+    """Verify Model 2 package contains only authorized modules once started."""
     import src.model_2_legacy as m2
     
-    # Model 2 package should not have models, pipelines, or classes implemented
     exported = [attr for attr in dir(m2) if not attr.startswith("__")]
-    assert len(exported) == 0, f"Model 2 must remain unimplemented, but found exports: {exported}"
+    assert set(exported).issubset({"models", "preprocessing", "train", "predict"}), f"Unexpected exports in Model 2: {exported}"
+

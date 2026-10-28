@@ -133,9 +133,15 @@ class GrandmasterPreprocessor(BaseEstimator, TransformerMixin):
     with semantic defaults / 'Missing', and encodes categories with OneHotEncoder(handle_unknown='ignore').
     """
 
-    def __init__(self, scale_numeric: bool = False, drop_id: bool = True):
+    def __init__(
+        self,
+        scale_numeric: bool = False,
+        drop_id: bool = True,
+        domain_imputation: bool = True,
+    ):
         self.scale_numeric = scale_numeric
         self.drop_id = drop_id
+        self.domain_imputation = domain_imputation
         self.feature_engineer = HousePricesFeatureEngineer()
         self.column_transformer: Optional[ColumnTransformer] = None
         self.feature_names_out_: Optional[np.ndarray] = None
@@ -164,17 +170,36 @@ class GrandmasterPreprocessor(BaseEstimator, TransformerMixin):
             numeric_steps.append(("scaler", StandardScaler()))
         numeric_pipeline = Pipeline(numeric_steps)
 
-        # Categorical sub-pipeline
-        categorical_pipeline = Pipeline([
-            ("imputer", SimpleImputer(strategy="constant", fill_value="Missing")),
-            ("onehot", OneHotEncoder(handle_unknown="ignore", sparse_output=False)),
-        ])
+        transformers = [("num", numeric_pipeline, self.numeric_cols_)]
+
+        if self.domain_imputation:
+            # Separate physical absence features from standard unrecorded categorical features
+            absence_cols = [c for c in NONE_CATEGORICAL_COLS if c in self.categorical_cols_]
+            mode_cols = [c for c in self.categorical_cols_ if c not in absence_cols]
+
+            absence_pipeline = Pipeline([
+                ("imputer", SimpleImputer(strategy="constant", fill_value="None")),
+                ("onehot", OneHotEncoder(handle_unknown="ignore", sparse_output=False)),
+            ])
+            mode_pipeline = Pipeline([
+                ("imputer", SimpleImputer(strategy="most_frequent")),
+                ("onehot", OneHotEncoder(handle_unknown="ignore", sparse_output=False)),
+            ])
+
+            if absence_cols:
+                transformers.append(("cat_absence", absence_pipeline, absence_cols))
+            if mode_cols:
+                transformers.append(("cat_mode", mode_pipeline, mode_cols))
+        else:
+            # Legacy generic categorical pipeline
+            categorical_pipeline = Pipeline([
+                ("imputer", SimpleImputer(strategy="constant", fill_value="Missing")),
+                ("onehot", OneHotEncoder(handle_unknown="ignore", sparse_output=False)),
+            ])
+            transformers.append(("cat", categorical_pipeline, self.categorical_cols_))
 
         self.column_transformer = ColumnTransformer(
-            transformers=[
-                ("num", numeric_pipeline, self.numeric_cols_),
-                ("cat", categorical_pipeline, self.categorical_cols_),
-            ],
+            transformers=transformers,
             remainder="drop",
         )
 

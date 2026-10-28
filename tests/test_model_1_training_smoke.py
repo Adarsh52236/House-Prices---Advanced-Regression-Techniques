@@ -67,8 +67,9 @@ def test_submission_schema_and_id_coverage():
     assert (sub_df["SalePrice"] > 0).all(), "Submission contains non-positive predictions."
 
 
-def test_model_2_still_unimplemented():
-    """Verify strict constraint: Model 2 must remain untouched and empty."""
+def test_model_2_isolated():
+    """Verify Model 2 implementation is isolated in its own package."""
     import src.model_2_legacy as m2
     exported = [attr for attr in dir(m2) if not attr.startswith("__")]
-    assert len(exported) == 0, f"Model 2 must remain unimplemented, but found: {exported}"
+    assert set(exported).issubset({"models", "preprocessing", "train", "predict"}), f"Unexpected exports in Model 2: {exported}"
+

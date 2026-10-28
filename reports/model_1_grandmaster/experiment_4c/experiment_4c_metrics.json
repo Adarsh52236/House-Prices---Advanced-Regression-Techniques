@@ -1,0 +1,621 @@
+{
+  "metadata": {
+    "experiment": "Experiment 4C: Controlled Tree Regularization",
+    "timestamp": "2026-10-27T14:57:09.493681",
+    "target_metric": "RMSLE",
+    "validation_population": 1460,
+    "random_seed": 42,
+    "retention_threshold_delta": -0.0003
+  },
+  "candidates": {
+    "config_a": {
+      "name": "Config A: Baseline (Exp 3 Champion)",
+      "overall_oof_rmsle": 0.1254615140327748,
+      "overall_oof_rmse": 28271.267536236795,
+      "overall_oof_mae": 14701.93511657022,
+      "delta_vs_baseline": 0.0,
+      "mean_fold_rmsle": 0.12429328370548101,
+      "std_fold_rmsle": 0.01708130934984088,
+      "mean_fold_rmse": 27551.795573863772,
+      "std_fold_rmse": 6337.438659387343,
+      "mean_fold_mae": 14701.935116570216,
+      "std_fold_mae": 1437.2847649310636,
+      "fold_scores": [
+        {
+          "rmsle": 0.12902225516310287,
+          "rmse": 27379.774845982192,
+          "mae": 15150.168561095094
+        },
+        {
+          "rmsle": 0.10873485475913941,
+          "rmse": 25903.53070923069,
+          "mae": 13785.399778441397
+        },
+        {
+          "rmsle": 0.15474033865666353,
+          "rmse": 39240.7976305343,
+          "mae": 17080.383089498315
+        },
+        {
+          "rmsle": 0.12060737411661958,
+          "rmse": 25141.39496889478,
+          "mae": 14697.294464977038
+        },
+        {
+          "rmsle": 0.10836159583187965,
+          "rmse": 20093.479714676883,
+          "mae": 12796.42968883925
+        }
+      ]
+    },
+    "config_b": {
+      "name": "Config B: Modest Regularization (min_leaf + L2=3/6)",
+      "overall_oof_rmsle": 0.12643724399334197,
+      "overall_oof_rmse": 28443.876343393444,
+      "overall_oof_mae": 14817.403127966016,
+      "delta_vs_baseline": 0.0009757299605671621,
+      "mean_fold_rmsle": 0.12521698838884693,
+      "std_fold_rmsle": 0.01752376921382108,
+      "mean_fold_rmse": 27718.095247187193,
+      "std_fold_rmse": 6384.457479388206,
+      "mean_fold_mae": 14817.403127966012,
+      "std_fold_mae": 1522.0232726385125,
+      "fold_scores": [
+        {
+          "rmsle": 0.13024116397223176,
+          "rmse": 28220.18580465675,
+          "mae": 15409.634582316168
+        },
+        {
+          "rmsle": 0.10895125465479473,
+          "rmse": 25805.196214125794,
+          "mae": 13810.966490334493
+        },
+        {
+          "rmsle": 0.15559353950660526,
+          "rmse": 39066.33854199205,
+          "mae": 17100.93536468889
+        },
+        {
+          "rmsle": 0.12400973016032334,
+          "rmse": 26046.06387213535,
+          "mae": 15158.946896056874
+        },
+        {
+          "rmsle": 0.10728925365027969,
+          "rmse": 19452.691803026013,
+          "mae": 12606.532306433643
+        }
+      ]
+    },
+    "config_c": {
+      "name": "Config C: Stronger Regularization (min_leaf + L2=5/10)",
+      "overall_oof_rmsle": 0.12824193984745683,
+      "overall_oof_rmse": 28701.155226056406,
+      "overall_oof_mae": 15178.502295652093,
+      "delta_vs_baseline": 0.0027804258146820193,
+      "mean_fold_rmsle": 0.1272602988172899,
+      "std_fold_rmsle": 0.015837028786133505,
+      "mean_fold_rmse": 28186.02545473011,
+      "std_fold_rmse": 5413.34280971481,
+      "mean_fold_mae": 15178.502295652093,
+      "std_fold_mae": 1448.689432517584,
+      "fold_scores": [
+        {
+          "rmsle": 0.1326672989295971,
+          "rmse": 29727.838948425346,
+          "mae": 15911.387466826069
+        },
+        {
+          "rmsle": 0.11124649814780428,
+          "rmse": 26824.378358264657,
+          "mae": 14180.180439083817
+        },
+        {
+          "rmsle": 0.15356377794972692,
+          "rmse": 37183.37617345769,
+          "mae": 17132.93965566188
+        },
+        {
+          "rmsle": 0.12816735981033175,
+          "rmse": 26697.62171920069,
+          "mae": 15696.637478647584
+        },
+        {
+          "rmsle": 0.11065655924898932,
+          "rmse": 20496.91207430217,
+          "mae": 12971.366438041112
+        }
+      ]
+    }
+  },
+  "price_bands": {
+    "below_100k": {
+      "count": 123,
+      "metrics": {
+        "config_a": {
+          "rmsle": 0.23294975399852177,
+          "rmse": 19833.27321995445,
+          "mae": 13481.920166010299
+        },
+        "config_b": {
+          "rmsle": 0.2360772641966518,
+          "rmse": 20025.41103908314,
+          "mae": 13850.062929265992
+        },
+        "config_c": {
+          "rmsle": 0.24016506985948313,
+          "rmse": 20392.75746606355,
+          "mae": 14152.206061687872
+        }
+      }
+    },
+    "100k_150k": {
+      "count": 496,
+      "metrics": {
+        "config_a": {
+          "rmsle": 0.10200167558694843,
+          "rmse": 14162.829038038763,
+          "mae": 9000.836740838928
+        },
+        "config_b": {
+          "rmsle": 0.102817020089103,
+          "rmse": 14229.39878565109,
+          "mae": 9026.794666701999
+        },
+        "config_c": {
+          "rmsle": 0.10471056760143353,
+          "rmse": 14507.739487869461,
+          "mae": 9290.253545513715
+        }
+      }
+    },
+    "150k_200k": {
+      "count": 414,
+      "metrics": {
+        "config_a": {
+          "rmsle": 0.11645947973281942,
+          "rmse": 30927.512989850133,
+          "mae": 12301.239197075016
+        },
+        "config_b": {
+          "rmsle": 0.11585568934079199,
+          "rmse": 30436.51858096029,
+          "mae": 12247.721850284632
+        },
+        "config_c": {
+          "rmsle": 0.11266994900137339,
+          "rmse": 28141.35251033764,
+          "mae": 12107.086251151608
+        }
+      }
+    },
+    "200k_250k": {
+      "count": 210,
+      "metrics": {
+        "config_a": {
+          "rmsle": 0.08705754618163572,
+          "rmse": 19258.01430999411,
+          "mae": 15540.041633461979
+        },
+        "config_b": {
+          "rmsle": 0.08820888004939952,
+          "rmse": 19523.164914308607,
+          "mae": 15699.827657718315
+        },
+        "config_c": {
+          "rmsle": 0.09165678015669006,
+          "rmse": 20098.318675263523,
+          "mae": 16011.200285118262
+        }
+      }
+    },
+    "250k_350k": {
+      "count": 163,
+      "metrics": {
+        "config_a": {
+          "rmsle": 0.10935956591370355,
+          "rmse": 30018.2970326023,
+          "mae": 23251.958990270854
+        },
+        "config_b": {
+          "rmsle": 0.1097634590430715,
+          "rmse": 30389.211909635218,
+          "mae": 23407.197333937318
+        },
+        "config_c": {
+          "rmsle": 0.11325636903588934,
+          "rmse": 31173.802165997753,
+          "mae": 23908.231075359075
+        }
+      }
+    },
+    "above_350k": {
+      "count": 54,
+      "metrics": {
+        "config_a": {
+          "rmsle": 0.19197052749565602,
+          "rmse": 85882.68412127541,
+          "mae": 59184.12926457263
+        },
+        "config_b": {
+          "rmsle": 0.19658675862978506,
+          "rmse": 87915.19145551776,
+          "mae": 60549.38615325935
+        },
+        "config_c": {
+          "rmsle": 0.20939837916409326,
+          "rmse": 93891.57020865486,
+          "mae": 65559.2373028614
+        }
+      }
+    }
+  },
+  "normal_sales": {
+    "count": 1198,
+    "metrics": {
+      "config_a": {
+        "rmsle": 0.09818401065216838,
+        "rmse": 19171.801561924956,
+        "mae": 12258.157752546269
+      },
+      "config_b": {
+        "rmsle": 0.09860676613842587,
+        "rmse": 19412.93646524893,
+        "mae": 12317.703299327053
+      },
+      "config_c": {
+        "rmsle": 0.10144474839831752,
+        "rmse": 20477.917511370393,
+        "mae": 12674.343745282471
+      }
+    }
+  },
+  "top_20_errors": [
+    {
+      "Id": 1299,
+      "SalePrice": 160000.0,
+      "Neighborhood": "Edwards",
+      "OverallQual": 10,
+      "SaleCondition": "Partial",
+      "predictions": {
+        "config_a": 530494.4656996947,
+        "config_b": 544910.7117861556,
+        "config_c": 507633.19599122606
+      },
+      "abs_log_errors": {
+        "config_a": 1.1986313455830349,
+        "config_b": 1.2254437196034118,
+        "config_c": 1.154581036345835
+      }
+    },
+    {
+      "Id": 524,
+      "SalePrice": 184750.0,
+      "Neighborhood": "Edwards",
+      "OverallQual": 10,
+      "SaleCondition": "Partial",
+      "predictions": {
+        "config_a": 601341.0034736479,
+        "config_b": 573262.8019365008,
+        "config_c": 531960.713988457
+      },
+      "abs_log_errors": {
+        "config_a": 1.1801548575103915,
+        "config_b": 1.1323370255591936,
+        "config_c": 1.0575625480312887
+      }
+    },
+    {
+      "Id": 31,
+      "SalePrice": 40000.0,
+      "Neighborhood": "IDOTRR",
+      "OverallQual": 4,
+      "SaleCondition": "Normal",
+      "predictions": {
+        "config_a": 94449.87654920151,
+        "config_b": 91512.66025521529,
+        "config_c": 87846.66799644307
+      },
+      "abs_log_errors": {
+        "config_a": 0.8591754206662898,
+        "config_b": 0.8275837997437563,
+        "config_c": 0.7866998151912625
+      }
+    },
+    {
+      "Id": 633,
+      "SalePrice": 82500.0,
+      "Neighborhood": "NWAmes",
+      "OverallQual": 7,
+      "SaleCondition": "Family",
+      "predictions": {
+        "config_a": 185662.36283853877,
+        "config_b": 184586.42130015822,
+        "config_c": 185346.9871301602
+      },
+      "abs_log_errors": {
+        "config_a": 0.8111247422151227,
+        "config_b": 0.8053127649652989,
+        "config_c": 0.8094246552265929
+      }
+    },
+    {
+      "Id": 496,
+      "SalePrice": 34900.0,
+      "Neighborhood": "IDOTRR",
+      "OverallQual": 4,
+      "SaleCondition": "Abnorml",
+      "predictions": {
+        "config_a": 71728.5720466734,
+        "config_b": 73905.87132626511,
+        "config_c": 75821.13427452737
+      },
+      "abs_log_errors": {
+        "config_a": 0.7203876218581957,
+        "config_b": 0.7502903229495352,
+        "config_c": 0.7758747768277914
+      }
+    },
+    {
+      "Id": 1325,
+      "SalePrice": 147000.0,
+      "Neighborhood": "Somerst",
+      "OverallQual": 8,
+      "SaleCondition": "Partial",
+      "predictions": {
+        "config_a": 290668.4302048114,
+        "config_b": 289786.41804058646,
+        "config_c": 290260.2486438948
+      },
+      "abs_log_errors": {
+        "config_a": 0.6817472533043478,
+        "config_b": 0.6787082234583757,
+        "config_c": 0.6803419853680843
+      }
+    },
+    {
+      "Id": 463,
+      "SalePrice": 62383.0,
+      "Neighborhood": "Sawyer",
+      "OverallQual": 5,
+      "SaleCondition": "Normal",
+      "predictions": {
+        "config_a": 122310.42009301914,
+        "config_b": 122494.11058856685,
+        "config_c": 123884.45334602083
+      },
+      "abs_log_errors": {
+        "config_a": 0.6732615837959859,
+        "config_b": 0.6747622833852525,
+        "config_c": 0.6860485430939569
+      }
+    },
+    {
+      "Id": 917,
+      "SalePrice": 35311.0,
+      "Neighborhood": "IDOTRR",
+      "OverallQual": 2,
+      "SaleCondition": "Abnorml",
+      "predictions": {
+        "config_a": 66150.43746222334,
+        "config_b": 69486.82412102283,
+        "config_c": 70773.24951841842
+      },
+      "abs_log_errors": {
+        "config_a": 0.6277237711539954,
+        "config_b": 0.6769286952050972,
+        "config_c": 0.6952723776607552
+      }
+    },
+    {
+      "Id": 971,
+      "SalePrice": 135000.0,
+      "Neighborhood": "NAmes",
+      "OverallQual": 4,
+      "SaleCondition": "Abnorml",
+      "predictions": {
+        "config_a": 73804.05667379657,
+        "config_b": 72578.97537405211,
+        "config_c": 74107.03074620373
+      },
+      "abs_log_errors": {
+        "config_a": 0.6038549379441385,
+        "config_b": 0.6205931233273887,
+        "config_c": 0.599758282246988
+      }
+    },
+    {
+      "Id": 969,
+      "SalePrice": 37900.0,
+      "Neighborhood": "OldTown",
+      "OverallQual": 3,
+      "SaleCondition": "Abnorml",
+      "predictions": {
+        "config_a": 67476.56266664005,
+        "config_b": 67571.17133319125,
+        "config_c": 69720.7454196312
+      },
+      "abs_log_errors": {
+        "config_a": 0.5768176407164791,
+        "config_b": 0.5782187346575931,
+        "config_c": 0.6095347580788655
+      }
+    },
+    {
+      "Id": 1183,
+      "SalePrice": 745000.0,
+      "Neighborhood": "NoRidge",
+      "OverallQual": 10,
+      "SaleCondition": "Abnorml",
+      "predictions": {
+        "config_a": 423963.27738561307,
+        "config_b": 431233.5664512816,
+        "config_c": 418079.58717658196
+      },
+      "abs_log_errors": {
+        "config_a": 0.5637363604269581,
+        "config_b": 0.5467333808944286,
+        "config_c": 0.5777113544293524
+      }
+    },
+    {
+      "Id": 411,
+      "SalePrice": 60000.0,
+      "Neighborhood": "Edwards",
+      "OverallQual": 5,
+      "SaleCondition": "Abnorml",
+      "predictions": {
+        "config_a": 104450.56638126461,
+        "config_b": 105596.54317428792,
+        "config_c": 107055.87485122711
+      },
+      "abs_log_errors": {
+        "config_a": 0.5543622556099912,
+        "config_b": 0.5652738768566365,
+        "config_c": 0.57899900516
+      }
+    },
+    {
+      "Id": 689,
+      "SalePrice": 392000.0,
+      "Neighborhood": "StoneBr",
+      "OverallQual": 8,
+      "SaleCondition": "Partial",
+      "predictions": {
+        "config_a": 226248.04110346475,
+        "config_b": 222899.69621048326,
+        "config_c": 222641.4023989563
+      },
+      "abs_log_errors": {
+        "config_a": 0.549628046453293,
+        "config_b": 0.56453802699993,
+        "config_c": 0.5656974831390524
+      }
+    },
+    {
+      "Id": 1433,
+      "SalePrice": 64500.0,
+      "Neighborhood": "OldTown",
+      "OverallQual": 4,
+      "SaleCondition": "Normal",
+      "predictions": {
+        "config_a": 107093.80771655195,
+        "config_b": 105934.85068508107,
+        "config_c": 106313.04225338445
+      },
+      "abs_log_errors": {
+        "config_a": 0.5070337680165,
+        "config_b": 0.49615300114166594,
+        "config_c": 0.49971664928590975
+      }
+    },
+    {
+      "Id": 813,
+      "SalePrice": 55993.0,
+      "Neighborhood": "IDOTRR",
+      "OverallQual": 5,
+      "SaleCondition": "Alloca",
+      "predictions": {
+        "config_a": 90473.54217266255,
+        "config_b": 92178.40883170872,
+        "config_c": 91787.62159380589
+      },
+      "abs_log_errors": {
+        "config_a": 0.47982396703573293,
+        "config_b": 0.49849223193925596,
+        "config_c": 0.49424380002659163
+      }
+    },
+    {
+      "Id": 1454,
+      "SalePrice": 84500.0,
+      "Neighborhood": "Mitchel",
+      "OverallQual": 5,
+      "SaleCondition": "Abnorml",
+      "predictions": {
+        "config_a": 130792.16783527238,
+        "config_b": 130396.00622605687,
+        "config_c": 130349.55333396298
+      },
+      "abs_log_errors": {
+        "config_a": 0.4368538353709557,
+        "config_b": 0.4338203222272412,
+        "config_c": 0.43346401674416235
+      }
+    },
+    {
+      "Id": 589,
+      "SalePrice": 143000.0,
+      "Neighborhood": "ClearCr",
+      "OverallQual": 5,
+      "SaleCondition": "Partial",
+      "predictions": {
+        "config_a": 220511.069424836,
+        "config_b": 218211.55719252655,
+        "config_c": 217019.39787113582
+      },
+      "abs_log_errors": {
+        "config_a": 0.4331008067670279,
+        "config_b": 0.4226179975039699,
+        "config_c": 0.4171397252864981
+      }
+    },
+    {
+      "Id": 667,
+      "SalePrice": 129000.0,
+      "Neighborhood": "NAmes",
+      "OverallQual": 6,
+      "SaleCondition": "Abnorml",
+      "predictions": {
+        "config_a": 194954.97778643837,
+        "config_b": 194871.51691063578,
+        "config_c": 198419.9019360612
+      },
+      "abs_log_errors": {
+        "config_a": 0.41295362186631124,
+        "config_b": 0.4125254290676157,
+        "config_c": 0.43057038553228466
+      }
+    },
+    {
+      "Id": 1329,
+      "SalePrice": 256000.0,
+      "Neighborhood": "OldTown",
+      "OverallQual": 6,
+      "SaleCondition": "Normal",
+      "predictions": {
+        "config_a": 170259.90641984716,
+        "config_b": 182344.08985608479,
+        "config_c": 176299.8526654787
+      },
+      "abs_log_errors": {
+        "config_a": 0.4078493465409281,
+        "config_b": 0.3392803608597532,
+        "config_c": 0.37298942488352615
+      }
+    },
+    {
+      "Id": 67,
+      "SalePrice": 180000.0,
+      "Neighborhood": "NAmes",
+      "OverallQual": 7,
+      "SaleCondition": "Normal",
+      "predictions": {
+        "config_a": 270405.1418212302,
+        "config_b": 272842.67712036707,
+        "config_c": 279814.49939784023
+      },
+      "abs_log_errors": {
+        "config_a": 0.40696265131643017,
+        "config_b": 0.4159366134694693,
+        "config_c": 0.44116804882665406
+      }
+    }
+  ],
+  "recommendation": {
+    "retain_candidate": false,
+    "retained_model": "Experiment 3 Variant 3 Baseline (0.12546 RMSLE)",
+    "rationale": "Neither regularization configuration satisfied the retention threshold of >= 0.00030 improvement. Both configurations degraded overall performance: Config B regressed by +0.00098 RMSLE (0.12546 -> 0.12644), and Config C regressed by +0.00278 RMSLE (0.12546 -> 0.12824). The baseline configuration (depth=4, n_estimators=600, lr=0.02) is already well regularized for this 1,460-sample tabular dataset. Imposing larger minimum leaf requirements and heavier L2 penalties caused underfitting across all price bands."
+  }
+}

@@ -1,0 +1,808 @@
+{
+  "audit_metadata": {
+    "timestamp": "2026-10-27T00:25:00",
+    "project": "House Prices - Advanced Regression Techniques",
+    "purpose": "Experiment 4 Preparation - Error Audit of Model 1 Grandmaster Best Candidate",
+    "current_best_candidate": "Variant 3: Functional Layout Density (Experiment 3)",
+    "current_best_public_leaderboard_rmsle": 0.12539,
+    "current_best_submission_file": "submissions/model_1_grandmaster/experiment_3/submission_candidate_variant_3_layout_density.csv",
+    "baseline_model": "Experiment 2 Tree Simple Average",
+    "baseline_public_leaderboard_rmsle": 0.12603,
+    "baseline_oof_rmsle": 0.12563491200326551,
+    "candidate_oof_rmsle": 0.1254615140327748,
+    "delta_oof_rmsle": -0.00017339797049070738,
+    "target_kaggle_public_rmsle": 0.12000,
+    "validation_population": 1460,
+    "validation_strategy": "5-Fold Shuffled KFold (random_state=42)"
+  },
+  "overall_metrics": {
+    "baseline": {
+      "rmsle": 0.12563491200326551,
+      "rmse": 28208.371832646164,
+      "mae": 14694.256850404809
+    },
+    "variant_3": {
+      "rmsle": 0.1254615140327748,
+      "rmse": 28271.267536236795,
+      "mae": 14701.935116570216
+    },
+    "delta": {
+      "delta_rmsle": -0.00017339797049070738,
+      "delta_rmse": 62.895703590631485,
+      "delta_mae": 7.678266165406967
+    }
+  },
+  "fold_metrics": [
+    {
+      "fold": 1,
+      "n_samples": 292,
+      "baseline": {
+        "rmsle": 0.12970510037622046,
+        "rmse": 27591.228526756044,
+        "mae": 15407.599822540136
+      },
+      "variant_3": {
+        "rmsle": 0.12902225516310287,
+        "rmse": 27379.77484598219,
+        "mae": 15150.168561095092
+      },
+      "delta_rmsle": -0.0006828452131175944
+    },
+    {
+      "fold": 2,
+      "n_samples": 292,
+      "baseline": {
+        "rmsle": 0.10830270537108824,
+        "rmse": 25265.615711144088,
+        "mae": 13573.006683925729
+      },
+      "variant_3": {
+        "rmsle": 0.10873485475913941,
+        "rmse": 25903.53070923069,
+        "mae": 13785.399778441395
+      },
+      "delta_rmsle": 0.0004321493880511673
+    },
+    {
+      "fold": 3,
+      "n_samples": 292,
+      "baseline": {
+        "rmsle": 0.15482631201475391,
+        "rmse": 39269.91714585897,
+        "mae": 17131.889030656213
+      },
+      "variant_3": {
+        "rmsle": 0.15474033865666353,
+        "rmse": 39240.797630534296,
+        "mae": 17080.38308949831
+      },
+      "delta_rmsle": -8.597335809037987e-05
+    },
+    {
+      "fold": 4,
+      "n_samples": 292,
+      "baseline": {
+        "rmsle": 0.12140697438191135,
+        "rmse": 25337.859391236074,
+        "mae": 14612.22522987689
+      },
+      "variant_3": {
+        "rmsle": 0.12060737411661958,
+        "rmse": 25141.39496889478,
+        "mae": 14697.294464977038
+      },
+      "delta_rmsle": -0.0007996002652917722
+    },
+    {
+      "fold": 5,
+      "n_samples": 292,
+      "baseline": {
+        "rmsle": 0.10796724593773419,
+        "rmse": 19869.586487709385,
+        "mae": 12746.563485025075
+      },
+      "variant_3": {
+        "rmsle": 0.10836159583187965,
+        "rmse": 20093.479714676883,
+        "mae": 12796.42968883925
+      },
+      "delta_rmsle": 0.00039434989414546817
+    }
+  ],
+  "price_bands": [
+    {
+      "band": "< $100k",
+      "n_samples": 123,
+      "pct_of_total": 8.42,
+      "baseline": {
+        "rmsle": 0.23392185683551234,
+        "rmse": 19978.8105352683,
+        "mae": 13477.644361561077
+      },
+      "variant_3": {
+        "rmsle": 0.23294975399852177,
+        "rmse": 19833.27321995445,
+        "mae": 13481.920166010299
+      },
+      "delta_rmsle": -0.0009721028369905627
+    },
+    {
+      "band": "$100k-$150k",
+      "n_samples": 496,
+      "pct_of_total": 33.97,
+      "baseline": {
+        "rmsle": 0.10201252205079951,
+        "rmse": 14119.427221754311,
+        "mae": 9020.73337444132
+      },
+      "variant_3": {
+        "rmsle": 0.10200167558694843,
+        "rmse": 14162.829038038763,
+        "mae": 9000.836740838928
+      },
+      "delta_rmsle": -1.0846463851077459e-05
+    },
+    {
+      "band": "$150k-$200k",
+      "n_samples": 414,
+      "pct_of_total": 28.36,
+      "baseline": {
+        "rmsle": 0.11674614643557538,
+        "rmse": 30930.52870760885,
+        "mae": 12294.369551010652
+      },
+      "variant_3": {
+        "rmsle": 0.11645947973281942,
+        "rmse": 30927.512989850136,
+        "mae": 12301.239197075016
+      },
+      "delta_rmsle": -0.0002866667027559555
+    },
+    {
+      "band": "$200k-$250k",
+      "n_samples": 210,
+      "pct_of_total": 14.38,
+      "baseline": {
+        "rmsle": 0.0868852308057675,
+        "rmse": 19178.32031388951,
+        "mae": 15475.56424872999
+      },
+      "variant_3": {
+        "rmsle": 0.08705754618163572,
+        "rmse": 19258.014309994105,
+        "mae": 15540.041633461977
+      },
+      "delta_rmsle": 0.00017231537586821777
+    },
+    {
+      "band": "$250k-$350k",
+      "n_samples": 163,
+      "pct_of_total": 11.16,
+      "baseline": {
+        "rmsle": 0.10967552539267705,
+        "rmse": 30263.134295250715,
+        "mae": 23485.48119717572
+      },
+      "variant_3": {
+        "rmsle": 0.10935956591370355,
+        "rmse": 30018.2970326023,
+        "mae": 23251.958990270854
+      },
+      "delta_rmsle": -0.0003159594789735043
+    },
+    {
+      "band": "> $350k",
+      "n_samples": 54,
+      "pct_of_total": 3.7,
+      "baseline": {
+        "rmsle": 0.19071157382464493,
+        "rmse": 85110.51287472842,
+        "mae": 58402.0383315697
+      },
+      "variant_3": {
+        "rmsle": 0.19197052749565602,
+        "rmse": 85882.68412127541,
+        "mae": 59184.12926457263
+      },
+      "delta_rmsle": 0.0012589536710110871
+    }
+  ],
+  "sale_condition": [
+    {
+      "condition": "Normal",
+      "n_samples": 1198,
+      "pct_of_total": 82.05,
+      "baseline": {
+        "rmsle": 0.09819412508890758,
+        "rmse": 19173.251425655748,
+        "mae": 12231.186860023607
+      },
+      "variant_3": {
+        "rmsle": 0.09818401065216838,
+        "rmse": 19171.801561924956,
+        "mae": 12258.157752546269
+      },
+      "delta_rmsle": -1.0114436739205868e-05
+    },
+    {
+      "condition": "Partial",
+      "n_samples": 125,
+      "pct_of_total": 8.56,
+      "baseline": {
+        "rmsle": 0.20392976610392757,
+        "rmse": 65195.78204224682,
+        "mae": 31454.207403099823
+      },
+      "variant_3": {
+        "rmsle": 0.20482824799710286,
+        "rmse": 65380.20525163627,
+        "mae": 31437.56589874225
+      },
+      "delta_rmsle": 0.0008984818931752903
+    },
+    {
+      "condition": "Abnorml",
+      "n_samples": 101,
+      "pct_of_total": 6.92,
+      "baseline": {
+        "rmsle": 0.2112411860767552,
+        "rmse": 38659.437725568285,
+        "mae": 20435.20849103468
+      },
+      "variant_3": {
+        "rmsle": 0.21002881174807553,
+        "rmse": 39130.95763741947,
+        "mae": 20479.179120940895
+      },
+      "delta_rmsle": -0.0012123743286796829
+    },
+    {
+      "condition": "Family",
+      "n_samples": 20,
+      "pct_of_total": 1.37,
+      "baseline": {
+        "rmsle": 0.24131823666753707,
+        "rmse": 34837.13808506567,
+        "mae": 23883.249439083338
+      },
+      "variant_3": {
+        "rmsle": 0.23732387483372253,
+        "rmse": 34216.92016162734,
+        "mae": 23518.5506410373
+      },
+      "delta_rmsle": -0.003994361833814547
+    },
+    {
+      "condition": "Alloca",
+      "n_samples": 12,
+      "pct_of_total": 0.82,
+      "baseline": {
+        "rmsle": 0.2240169283560186,
+        "rmse": 34785.458410336236,
+        "mae": 25199.250067410245
+      },
+      "variant_3": {
+        "rmsle": 0.2207359359654449,
+        "rmse": 34064.83580391367,
+        "mae": 23942.43155509372
+      },
+      "delta_rmsle": -0.003280992390573695
+    },
+    {
+      "condition": "AdjLand",
+      "n_samples": 4,
+      "pct_of_total": 0.27,
+      "baseline": {
+        "rmsle": 0.0731333084479012,
+        "rmse": 8440.083139479095,
+        "mae": 6216.292677542548
+      },
+      "variant_3": {
+        "rmsle": 0.07353657207285111,
+        "rmse": 8292.84345554361,
+        "mae": 5944.815650601122
+      },
+      "delta_rmsle": 0.0004032636249499122
+    }
+  ],
+  "sale_type": [
+    {
+      "sale_type": "WD",
+      "n_samples": 1267,
+      "pct_of_total": 86.78,
+      "baseline": {
+        "rmsle": 0.11464011521849948,
+        "rmse": 21987.014805392053,
+        "mae": 13112.01354296131
+      },
+      "variant_3": {
+        "rmsle": 0.11445229163974212,
+        "rmse": 22044.525724217132,
+        "mae": 13133.322662680921
+      },
+      "delta_rmsle": -0.0001878235787573651
+    },
+    {
+      "sale_type": "New",
+      "n_samples": 122,
+      "pct_of_total": 8.36,
+      "baseline": {
+        "rmsle": 0.20240411551259352,
+        "rmse": 65636.00886242799,
+        "mae": 31463.575714077415
+      },
+      "variant_3": {
+        "rmsle": 0.20306633751721204,
+        "rmse": 65787.81731560903,
+        "mae": 31434.187767072144
+      },
+      "delta_rmsle": 0.0006622220046185179
+    },
+    {
+      "sale_type": "COD",
+      "n_samples": 43,
+      "pct_of_total": 2.95,
+      "baseline": {
+        "rmsle": 0.14197727284276349,
+        "rmse": 15939.92052311544,
+        "mae": 12748.973296277916
+      },
+      "variant_3": {
+        "rmsle": 0.1391766973838606,
+        "rmse": 15731.31924401379,
+        "mae": 12524.340834864735
+      },
+      "delta_rmsle": -0.0028005754589028875
+    },
+    {
+      "sale_type": "ConLD",
+      "n_samples": 9,
+      "pct_of_total": 0.62,
+      "baseline": {
+        "rmsle": 0.1937632742109786,
+        "rmse": 20143.375549989327,
+        "mae": 16392.139500201753
+      },
+      "variant_3": {
+        "rmsle": 0.19277054419399958,
+        "rmse": 19702.31630703421,
+        "mae": 15960.162724295315
+      },
+      "delta_rmsle": -0.0009927300169790265
+    },
+    {
+      "sale_type": "ConLI",
+      "n_samples": 5,
+      "pct_of_total": 0.34,
+      "baseline": {
+        "rmsle": 0.1082477523377883,
+        "rmse": 24804.96254262844,
+        "mae": 19338.28388469667
+      },
+      "variant_3": {
+        "rmsle": 0.10274940054355508,
+        "rmse": 23374.06393091351,
+        "mae": 17887.48728951633
+      },
+      "delta_rmsle": -0.005498351794233219
+    },
+    {
+      "sale_type": "ConLw",
+      "n_samples": 5,
+      "pct_of_total": 0.34,
+      "baseline": {
+        "rmsle": 0.032529795424685995,
+        "rmse": 2972.619806771094,
+        "mae": 2553.031381792664
+      },
+      "variant_3": {
+        "rmsle": 0.03663974930614464,
+        "rmse": 5253.241203918894,
+        "mae": 4292.960675500338
+      },
+      "delta_rmsle": 0.004109953881458642
+    },
+    {
+      "sale_type": "CWD",
+      "n_samples": 4,
+      "pct_of_total": 0.27,
+      "baseline": {
+        "rmsle": 0.13097375038200965,
+        "rmse": 31548.828740929122,
+        "mae": 27046.069654595856
+      },
+      "variant_3": {
+        "rmsle": 0.12621891991714904,
+        "rmse": 30962.49867659255,
+        "mae": 25793.07963346498
+      },
+      "delta_rmsle": -0.00475483046486061
+    },
+    {
+      "sale_type": "Oth",
+      "n_samples": 3,
+      "pct_of_total": 0.21,
+      "baseline": {
+        "rmsle": 0.1157783166844099,
+        "rmse": 13081.934906953455,
+        "mae": 13049.760338335846
+      },
+      "variant_3": {
+        "rmsle": 0.11672377776689805,
+        "rmse": 13208.969959352957,
+        "mae": 13154.687945653583
+      },
+      "delta_rmsle": 0.0009454610824881499
+    },
+    {
+      "sale_type": "Con",
+      "n_samples": 2,
+      "pct_of_total": 0.14,
+      "baseline": {
+        "rmsle": 0.09502336827499108,
+        "rmse": 26985.944373737504,
+        "mae": 24806.181166997063
+      },
+      "variant_3": {
+        "rmsle": 0.10529287040408346,
+        "rmse": 30250.21469873047,
+        "mae": 27103.903189621808
+      },
+      "delta_rmsle": 0.010269502129092375
+    }
+  ],
+  "expensive_homes": {
+    "above_350k": {
+      "n_samples": 54,
+      "pct_of_total": 3.7,
+      "baseline": {
+        "rmsle": 0.19071157382464493,
+        "rmse": 85110.51287472842,
+        "mae": 58402.0383315697
+      },
+      "variant_3": {
+        "rmsle": 0.19197052749565602,
+        "rmse": 85882.68412127541,
+        "mae": 59184.12926457263
+      },
+      "delta_rmsle": 0.0012589536710110871
+    },
+    "above_400k": {
+      "n_samples": 28,
+      "pct_of_total": 1.92,
+      "baseline": {
+        "rmsle": 0.20552030155828685,
+        "rmse": 105070.40072721065,
+        "mae": 74642.57981317736
+      },
+      "variant_3": {
+        "rmsle": 0.20806480620996595,
+        "rmse": 106257.03592922878,
+        "mae": 75450.45788753734
+      },
+      "delta_rmsle": 0.0025445046516790993
+    }
+  },
+  "top_20_errors": [
+    {
+      "Id": 1299,
+      "SalePrice": 160000.0,
+      "pred_variant_3": 530494.47,
+      "pred_baseline": 526720.99,
+      "fold": 3,
+      "SaleCondition": "Partial",
+      "SaleType": "New",
+      "Neighborhood": "Edwards",
+      "OverallQual": 10,
+      "GrLivArea": 5642,
+      "YearBuilt": 2008,
+      "abs_log_err_v3": 1.1986,
+      "log_err_v3": -1.1986,
+      "abs_dollar_err_v3": 370494.47
+    },
+    {
+      "Id": 524,
+      "SalePrice": 184750.0,
+      "pred_variant_3": 601341.0,
+      "pred_baseline": 604782.69,
+      "fold": 3,
+      "SaleCondition": "Partial",
+      "SaleType": "New",
+      "Neighborhood": "Edwards",
+      "OverallQual": 10,
+      "GrLivArea": 4676,
+      "YearBuilt": 2007,
+      "abs_log_err_v3": 1.1802,
+      "log_err_v3": -1.1802,
+      "abs_dollar_err_v3": 416591.0
+    },
+    {
+      "Id": 31,
+      "SalePrice": 40000.0,
+      "pred_variant_3": 94449.88,
+      "pred_baseline": 92866.92,
+      "fold": 1,
+      "SaleCondition": "Normal",
+      "SaleType": "WD",
+      "Neighborhood": "IDOTRR",
+      "OverallQual": 4,
+      "GrLivArea": 1317,
+      "YearBuilt": 1920,
+      "abs_log_err_v3": 0.8592,
+      "log_err_v3": -0.8592,
+      "abs_dollar_err_v3": 54449.88
+    },
+    {
+      "Id": 633,
+      "SalePrice": 82500.0,
+      "pred_variant_3": 185662.36,
+      "pred_baseline": 188895.24,
+      "fold": 5,
+      "SaleCondition": "Family",
+      "SaleType": "WD",
+      "Neighborhood": "NWAmes",
+      "OverallQual": 7,
+      "GrLivArea": 1411,
+      "YearBuilt": 1977,
+      "abs_log_err_v3": 0.8111,
+      "log_err_v3": -0.8111,
+      "abs_dollar_err_v3": 103162.36
+    },
+    {
+      "Id": 496,
+      "SalePrice": 34900.0,
+      "pred_variant_3": 71728.57,
+      "pred_baseline": 72611.23,
+      "fold": 4,
+      "SaleCondition": "Abnorml",
+      "SaleType": "WD",
+      "Neighborhood": "IDOTRR",
+      "OverallQual": 4,
+      "GrLivArea": 720,
+      "YearBuilt": 1920,
+      "abs_log_err_v3": 0.7204,
+      "log_err_v3": -0.7204,
+      "abs_dollar_err_v3": 36828.57
+    },
+    {
+      "Id": 1325,
+      "SalePrice": 147000.0,
+      "pred_variant_3": 290668.43,
+      "pred_baseline": 286620.35,
+      "fold": 3,
+      "SaleCondition": "Partial",
+      "SaleType": "New",
+      "Neighborhood": "Somerst",
+      "OverallQual": 8,
+      "GrLivArea": 1795,
+      "YearBuilt": 2006,
+      "abs_log_err_v3": 0.6817,
+      "log_err_v3": -0.6817,
+      "abs_dollar_err_v3": 143668.43
+    },
+    {
+      "Id": 463,
+      "SalePrice": 62383.0,
+      "pred_variant_3": 122310.42,
+      "pred_baseline": 123042.15,
+      "fold": 2,
+      "SaleCondition": "Normal",
+      "SaleType": "WD",
+      "Neighborhood": "Sawyer",
+      "OverallQual": 5,
+      "GrLivArea": 864,
+      "YearBuilt": 1965,
+      "abs_log_err_v3": 0.6733,
+      "log_err_v3": -0.6733,
+      "abs_dollar_err_v3": 59927.42
+    },
+    {
+      "Id": 917,
+      "SalePrice": 35311.0,
+      "pred_variant_3": 66150.44,
+      "pred_baseline": 66471.89,
+      "fold": 1,
+      "SaleCondition": "Abnorml",
+      "SaleType": "WD",
+      "Neighborhood": "IDOTRR",
+      "OverallQual": 2,
+      "GrLivArea": 480,
+      "YearBuilt": 1949,
+      "abs_log_err_v3": 0.6277,
+      "log_err_v3": -0.6277,
+      "abs_dollar_err_v3": 30839.44
+    },
+    {
+      "Id": 971,
+      "SalePrice": 135000.0,
+      "pred_variant_3": 73804.06,
+      "pred_baseline": 74067.29,
+      "fold": 3,
+      "SaleCondition": "Abnorml",
+      "SaleType": "WD",
+      "Neighborhood": "NAmes",
+      "OverallQual": 4,
+      "GrLivArea": 1192,
+      "YearBuilt": 1949,
+      "abs_log_err_v3": 0.6039,
+      "log_err_v3": 0.6039,
+      "abs_dollar_err_v3": 61195.94
+    },
+    {
+      "Id": 969,
+      "SalePrice": 37900.0,
+      "pred_variant_3": 67476.56,
+      "pred_baseline": 68211.62,
+      "fold": 4,
+      "SaleCondition": "Abnorml",
+      "SaleType": "WD",
+      "Neighborhood": "OldTown",
+      "OverallQual": 3,
+      "GrLivArea": 968,
+      "YearBuilt": 1910,
+      "abs_log_err_v3": 0.5768,
+      "log_err_v3": -0.5768,
+      "abs_dollar_err_v3": 29576.56
+    },
+    {
+      "Id": 1183,
+      "SalePrice": 745000.0,
+      "pred_variant_3": 423963.28,
+      "pred_baseline": 429616.85,
+      "fold": 2,
+      "SaleCondition": "Abnorml",
+      "SaleType": "WD",
+      "Neighborhood": "NoRidge",
+      "OverallQual": 10,
+      "GrLivArea": 4476,
+      "YearBuilt": 1996,
+      "abs_log_err_v3": 0.5637,
+      "log_err_v3": 0.5637,
+      "abs_dollar_err_v3": 321036.72
+    },
+    {
+      "Id": 411,
+      "SalePrice": 60000.0,
+      "pred_variant_3": 104450.57,
+      "pred_baseline": 106337.27,
+      "fold": 2,
+      "SaleCondition": "Abnorml",
+      "SaleType": "COD",
+      "Neighborhood": "Edwards",
+      "OverallQual": 5,
+      "GrLivArea": 1276,
+      "YearBuilt": 1958,
+      "abs_log_err_v3": 0.5544,
+      "log_err_v3": -0.5544,
+      "abs_dollar_err_v3": 44450.57
+    },
+    {
+      "Id": 689,
+      "SalePrice": 392000.0,
+      "pred_variant_3": 226248.04,
+      "pred_baseline": 224450.05,
+      "fold": 4,
+      "SaleCondition": "Partial",
+      "SaleType": "New",
+      "Neighborhood": "StoneBr",
+      "OverallQual": 8,
+      "GrLivArea": 1419,
+      "YearBuilt": 2007,
+      "abs_log_err_v3": 0.5496,
+      "log_err_v3": 0.5496,
+      "abs_dollar_err_v3": 165751.96
+    },
+    {
+      "Id": 1433,
+      "SalePrice": 64500.0,
+      "pred_variant_3": 107093.81,
+      "pred_baseline": 107936.82,
+      "fold": 1,
+      "SaleCondition": "Normal",
+      "SaleType": "WD",
+      "Neighborhood": "OldTown",
+      "OverallQual": 4,
+      "GrLivArea": 968,
+      "YearBuilt": 1927,
+      "abs_log_err_v3": 0.507,
+      "log_err_v3": -0.507,
+      "abs_dollar_err_v3": 42593.81
+    },
+    {
+      "Id": 813,
+      "SalePrice": 55993.0,
+      "pred_variant_3": 90473.54,
+      "pred_baseline": 90575.74,
+      "fold": 1,
+      "SaleCondition": "Alloca",
+      "SaleType": "WD",
+      "Neighborhood": "IDOTRR",
+      "OverallQual": 5,
+      "GrLivArea": 1044,
+      "YearBuilt": 1952,
+      "abs_log_err_v3": 0.4798,
+      "log_err_v3": -0.4798,
+      "abs_dollar_err_v3": 34480.54
+    },
+    {
+      "Id": 1454,
+      "SalePrice": 84500.0,
+      "pred_variant_3": 130792.17,
+      "pred_baseline": 130550.82,
+      "fold": 3,
+      "SaleCondition": "Abnorml",
+      "SaleType": "WD",
+      "Neighborhood": "Mitchel",
+      "OverallQual": 5,
+      "GrLivArea": 1140,
+      "YearBuilt": 2006,
+      "abs_log_err_v3": 0.4369,
+      "log_err_v3": -0.4369,
+      "abs_dollar_err_v3": 46292.17
+    },
+    {
+      "Id": 589,
+      "SalePrice": 143000.0,
+      "pred_variant_3": 220511.07,
+      "pred_baseline": 216515.66,
+      "fold": 1,
+      "SaleCondition": "Partial",
+      "SaleType": "WD",
+      "Neighborhood": "ClearCr",
+      "OverallQual": 5,
+      "GrLivArea": 1473,
+      "YearBuilt": 1968,
+      "abs_log_err_v3": 0.4331,
+      "log_err_v3": -0.4331,
+      "abs_dollar_err_v3": 77511.07
+    },
+    {
+      "Id": 667,
+      "SalePrice": 129000.0,
+      "pred_variant_3": 194954.98,
+      "pred_baseline": 195999.38,
+      "fold": 3,
+      "SaleCondition": "Abnorml",
+      "SaleType": "WD",
+      "Neighborhood": "NAmes",
+      "OverallQual": 6,
+      "GrLivArea": 2380,
+      "YearBuilt": 1965,
+      "abs_log_err_v3": 0.413,
+      "log_err_v3": -0.413,
+      "abs_dollar_err_v3": 65954.98
+    },
+    {
+      "Id": 1329,
+      "SalePrice": 256000.0,
+      "pred_variant_3": 170259.91,
+      "pred_baseline": 176290.18,
+      "fold": 5,
+      "SaleCondition": "Normal",
+      "SaleType": "WD",
+      "Neighborhood": "OldTown",
+      "OverallQual": 6,
+      "GrLivArea": 2792,
+      "YearBuilt": 1920,
+      "abs_log_err_v3": 0.4078,
+      "log_err_v3": 0.4078,
+      "abs_dollar_err_v3": 85740.09
+    },
+    {
+      "Id": 67,
+      "SalePrice": 180000.0,
+      "pred_variant_3": 270405.14,
+      "pred_baseline": 269910.45,
+      "fold": 3,
+      "SaleCondition": "Normal",
+      "SaleType": "WD",
+      "Neighborhood": "NAmes",
+      "OverallQual": 7,
+      "GrLivArea": 2207,
+      "YearBuilt": 1970,
+      "abs_log_err_v3": 0.407,
+      "log_err_v3": -0.407,
+      "abs_dollar_err_v3": 90405.14
+    }
+  ]
+}

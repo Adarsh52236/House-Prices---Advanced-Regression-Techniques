@@ -1,0 +1,280 @@
+{
+  "metadata": {
+    "experiment": "Experiment 4B: Targeted Incomplete-Construction Feature Engineering",
+    "timestamp": "2026-10-27T00:51:49.366791",
+    "target_metric": "RMSLE",
+    "validation_population": 1460,
+    "random_seed": 42,
+    "retention_threshold_delta": -0.0003
+  },
+  "candidates": {
+    "baseline": {
+      "name": "Variant 3 Baseline (No added features)",
+      "overall_oof_rmsle": 0.1254615140327748,
+      "overall_oof_rmse": 28271.267536236795,
+      "overall_oof_mae": 14701.93511657022,
+      "delta_vs_baseline": 0.0,
+      "mean_fold_rmsle": 0.12429328370548101,
+      "std_fold_rmsle": 0.01708130934984088,
+      "mean_fold_rmse": 27551.795573863772,
+      "std_fold_rmse": 6337.438659387343,
+      "mean_fold_mae": 14701.935116570216,
+      "std_fold_mae": 1437.2847649310636,
+      "fold_scores": [
+        {
+          "rmsle": 0.12902225516310287,
+          "rmse": 27379.774845982192,
+          "mae": 15150.168561095094
+        },
+        {
+          "rmsle": 0.10873485475913941,
+          "rmse": 25903.53070923069,
+          "mae": 13785.399778441397
+        },
+        {
+          "rmsle": 0.15474033865666353,
+          "rmse": 39240.7976305343,
+          "mae": 17080.383089498315
+        },
+        {
+          "rmsle": 0.12060737411661958,
+          "rmse": 25141.39496889478,
+          "mae": 14697.294464977038
+        },
+        {
+          "rmsle": 0.10836159583187965,
+          "rmse": 20093.479714676883,
+          "mae": 12796.42968883925
+        }
+      ]
+    },
+    "candidate_1": {
+      "name": "Variant 3 + IsPartialNew",
+      "overall_oof_rmsle": 0.1254494268322327,
+      "overall_oof_rmse": 28281.916899449632,
+      "overall_oof_mae": 14614.734543186982,
+      "delta_vs_baseline": -1.2087200542104659e-05,
+      "mean_fold_rmsle": 0.12420797622679822,
+      "std_fold_rmsle": 0.017605037181978034,
+      "mean_fold_rmse": 27478.699064862372,
+      "std_fold_rmse": 6692.377844242391,
+      "mean_fold_mae": 14614.734543186982,
+      "std_fold_mae": 1506.9672692617887,
+      "fold_scores": [
+        {
+          "rmsle": 0.12799270687679656,
+          "rmse": 27323.247631145772,
+          "mae": 15064.226763798393
+        },
+        {
+          "rmsle": 0.10800149152915825,
+          "rmse": 25122.59306135984,
+          "mae": 13538.520213696436
+        },
+        {
+          "rmsle": 0.1556945477127786,
+          "rmse": 39886.338235329684,
+          "mae": 17073.253954752035
+        },
+        {
+          "rmsle": 0.12173157638751013,
+          "rmse": 25309.909786568136,
+          "mae": 14764.765729505678
+        },
+        {
+          "rmsle": 0.10761955862774764,
+          "rmse": 19751.406609908427,
+          "mae": 12632.906054182364
+        }
+      ]
+    },
+    "candidate_2": {
+      "name": "Variant 3 + IsPartialNew + PartialNewAreaInteraction",
+      "overall_oof_rmsle": 0.12542354748856818,
+      "overall_oof_rmse": 28016.830892760012,
+      "overall_oof_mae": 14612.397560692569,
+      "delta_vs_baseline": -3.79665442066246e-05,
+      "mean_fold_rmsle": 0.12421301670067393,
+      "std_fold_rmsle": 0.017383691976539852,
+      "mean_fold_rmse": 27201.025721203747,
+      "std_fold_rmse": 6711.707158981519,
+      "mean_fold_mae": 14612.39756069257,
+      "std_fold_mae": 1480.998933165226,
+      "fold_scores": [
+        {
+          "rmsle": 0.12835570426542953,
+          "rmse": 26714.67834882933,
+          "mae": 15049.857844417236
+        },
+        {
+          "rmsle": 0.10847352345725136,
+          "rmse": 25056.044535885307,
+          "mae": 13739.562523877712
+        },
+        {
+          "rmsle": 0.1552696145786375,
+          "rmse": 39750.322856725856,
+          "mae": 17024.940805984592
+        },
+        {
+          "rmsle": 0.12127341506753138,
+          "rmse": 24862.125203526753,
+          "mae": 14681.786415661016
+        },
+        {
+          "rmsle": 0.10769282613451976,
+          "rmse": 19621.95766105149,
+          "mae": 12565.840213522295
+        }
+      ]
+    }
+  },
+  "subgroups": {
+    "normal_sales": {
+      "name": "Normal Sales",
+      "count": 1198,
+      "metrics": {
+        "baseline": {
+          "rmsle": 0.09818401065216838,
+          "rmse": 19171.801561924956,
+          "mae": 12258.157752546269
+        },
+        "candidate_1": {
+          "rmsle": 0.09791284020167089,
+          "rmse": 19051.124423459398,
+          "mae": 12177.424046759175
+        },
+        "candidate_2": {
+          "rmsle": 0.09809075802558755,
+          "rmse": 18901.53685576636,
+          "mae": 12163.186758915006
+        }
+      }
+    },
+    "partial_sales": {
+      "name": "Partial Sales",
+      "count": 125,
+      "metrics": {
+        "baseline": {
+          "rmsle": 0.20482824799710286,
+          "rmse": 65380.205251636275,
+          "mae": 31437.565898742254
+        },
+        "candidate_1": {
+          "rmsle": 0.20597764180593042,
+          "rmse": 66262.7345238563,
+          "mae": 31262.858610674728
+        },
+        "candidate_2": {
+          "rmsle": 0.20570493277072213,
+          "rmse": 65848.39205689055,
+          "mae": 31495.182778810537
+        }
+      }
+    },
+    "partial_new_sales": {
+      "name": "Partial & New Sales",
+      "count": 122,
+      "metrics": {
+        "baseline": {
+          "rmsle": 0.20306633751721204,
+          "rmse": 65787.81731560903,
+          "mae": 31434.187767072144
+        },
+        "candidate_1": {
+          "rmsle": 0.20467821251528875,
+          "rmse": 66737.1912692087,
+          "mae": 31278.54514931562
+        },
+        "candidate_2": {
+          "rmsle": 0.20397579929373974,
+          "rmse": 66264.31738175436,
+          "mae": 31490.186702266314
+        }
+      }
+    }
+  },
+  "high_error_ids": [
+    {
+      "Id": 524,
+      "Actual": 184750.0,
+      "predictions": {
+        "baseline": 601341.0034736479,
+        "candidate_1": 611977.6859879382,
+        "candidate_2": 607266.8296309604
+      },
+      "log_errors": {
+        "baseline": -1.1801548575103915,
+        "candidate_1": -1.1976884825552094,
+        "candidate_2": -1.1899609561872868
+      },
+      "dollar_errors": {
+        "baseline": 416591.00347364787,
+        "candidate_1": 427227.6859879382,
+        "candidate_2": 422516.82963096036
+      }
+    },
+    {
+      "Id": 1299,
+      "Actual": 160000.0,
+      "predictions": {
+        "baseline": 530494.4656996947,
+        "candidate_1": 540702.2635356983,
+        "candidate_2": 540902.7892499247
+      },
+      "log_errors": {
+        "baseline": -1.1986313455830349,
+        "candidate_1": -1.217690566915941,
+        "candidate_2": -1.2180613590922817
+      },
+      "dollar_errors": {
+        "baseline": 370494.4656996947,
+        "candidate_1": 380702.2635356983,
+        "candidate_2": 380902.7892499247
+      }
+    },
+    {
+      "Id": 1325,
+      "Actual": 147000.0,
+      "predictions": {
+        "baseline": 290668.4302048114,
+        "candidate_1": 291238.77232355624,
+        "candidate_2": 290543.948487505
+      },
+      "log_errors": {
+        "baseline": -0.6817472533043478,
+        "candidate_1": -0.6837074983009828,
+        "candidate_2": -0.6813189028582016
+      },
+      "dollar_errors": {
+        "baseline": 143668.4302048114,
+        "candidate_1": 144238.77232355624,
+        "candidate_2": 143543.94848750503
+      }
+    },
+    {
+      "Id": 689,
+      "Actual": 392000.0,
+      "predictions": {
+        "baseline": 226248.04110346475,
+        "candidate_1": 225675.3848591125,
+        "candidate_2": 225912.78000362037
+      },
+      "log_errors": {
+        "baseline": 0.549628046453293,
+        "candidate_1": 0.5521623431223972,
+        "candidate_2": 0.5511109687354114
+      },
+      "dollar_errors": {
+        "baseline": 165751.95889653525,
+        "candidate_1": 166324.6151408875,
+        "candidate_2": 166087.21999637963
+      }
+    }
+  ],
+  "recommendation": {
+    "retain_candidate": false,
+    "retained_model": "Experiment 3 Variant 3 (0.12546 RMSLE)",
+    "rationale": "Neither candidate met the retention criterion of >= 0.00030 RMSLE improvement. Candidate 1 (IsPartialNew) improved RMSLE by only -0.00001 (0.12546 -> 0.12545). Candidate 2 (IsPartialNew + PartialNewAreaInteraction) improved RMSLE by only -0.00004 (0.12546 -> 0.12542). Both candidates actually regressed on Partial sales (RMSLE 0.20483 -> 0.20598 / 0.20570) and made the extreme Edwards outliers IDs 524 and 1299 slightly worse. Because SaleType_New and SaleCondition_Partial already exist in the one-hot matrix with 100% mutual coverage for new sales, the added features provided redundant signal rather than genuine construction discount mechanics."
+  }
+}
